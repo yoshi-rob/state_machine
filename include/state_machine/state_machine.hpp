@@ -15,13 +15,13 @@ class StateMachine {
     StateMachine(const StateMachine &) = delete;
     StateMachine &operator=(const StateMachine &) = delete;
 
-    void register_(const std::string &name, const std::shared_ptr<State> &state);
+    void registerState(const std::string &name, const std::shared_ptr<State> &state);
     void change(const std::string &name);
     void update();
 
   private:
-    std::unordered_map<std::string, std::shared_ptr<State>> states;
-    std::shared_ptr<State> currentState = nullptr;
+    std::unordered_map<std::string, std::shared_ptr<State>> states_;
+    std::shared_ptr<State> currentState_ = nullptr;
 };
 
 #endif // STATE_MACHINE_HPP

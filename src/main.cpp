@@ -7,8 +7,8 @@ int main() {
     std::shared_ptr<State> stateB = std::make_shared<StateB>();
 
     StateMachine stateMachine;
-    stateMachine.register_("stateA", stateA);
-    stateMachine.register_("stateB", stateB);
+    stateMachine.registerState("stateA", stateA);
+    stateMachine.registerState("stateB", stateB);
 
     stateMachine.change("stateA");
 
